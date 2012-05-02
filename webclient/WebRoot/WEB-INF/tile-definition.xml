@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+
+<tiles-definitions>
+
+
+
+	<!--
+		######### ANSWER #########
+	-->
+
+
+	<definition name="addAnswer" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/answer/addAnswer.jsp" />
+	</definition>
+
+	<definition name="viewAllAnswers" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/answer/viewAllAnswers.jsp" />
+	</definition>
+
+
+	<!--
+		######### ERROR #########
+	-->
+
+
+	<definition name="exception" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/error/exception.jsp" />
+	</definition>
+	<definition name="errorPage" page="/Jsp/layout/defaultLayout.jsp">
+		<put name="defaultHeader" value="/Jsp/layout/defaultHeader.jsp" />
+		<put name="contentPanel" value="/Jsp/error/errorPage.jsp" />
+	</definition>
+
+	<!--
+		#########################################################################
+		LAYOUT
+		#########################################################################
+	-->
+
+
+	<definition name="verticalMenuBar" page="/Jsp/layout/verticallayout.jsp">
+		<put name="verticalMenuBar" value="/Jsp/layout/verticalMenuBar.jsp" />
+
+	</definition>
+
+
+	<!--
+		#########################################################################
+		LINK
+		#########################################################################
+	-->
+
+
+	<definition name="addUsefulLinks" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/link/addUsefulLinks.jsp" />
+	</definition>
+
+	<definition name="viewLinks" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/link/viewLinks.jsp" />
+	</definition>
+
+	<definition name="usefulLinks" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/link/usefulLinks.jsp" />
+	</definition>
+
+
+
+	<!--
+		###################################################################
+		LOGIN #########
+	-->
+
+
+	<definition name="login" page="/Jsp/login/login.jsp">
+		<put name="defaultHeader" value="/Jsp/layout/defaultHeader.jsp" />
+		<put name="contentPanel" value="/Jsp/login/login.jsp" />
+	</definition>
+
+	<definition name="registration" page="/Jsp/defaultLayout.jsp">
+		<put name="defaultHeader" value="/Jsp/defaultHeader.jsp" />
+		<put name="contentPanel" value="/Jsp/login/registration.jsp" />
+	</definition>
+
+
+	<definition name="logout" page="/Jsp/defaultLayout.jsp">
+		<put name="defaultHeader" value="/Jsp/defaultHeader.jsp" />
+		<put name="contentPanel" value="/Jsp/login/logout.jsp" />
+	</definition>
+
+	<definition name="forgotPassword" page="/Jsp/layout/defaultLayout.jsp">
+		<put name="defaultHeader" value="/Jsp/layout/defaultHeader.jsp" />
+		<put name="contentPanel" value="/Jsp/login/forgotPassword.jsp" />
+	</definition>
+
+	<definition name="changePassword" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/login/changePassword.jsp" />
+	</definition>
+
+
+	<definition name="sentPassword" page="/Jsp/defaultLayout.jsp">
+		<put name="defaultHeader" value="/Jsp/defaultHeader.jsp" />
+		<put name="contentPanel" value="/Jsp/login/sentPassword.jsp" />
+	</definition>
+
+
+	<!--
+		########################################################### QUESTION
+		#########
+	-->
+
+
+	<definition name="question" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/question/question.jsp" />
+	</definition>
+	
+	<definition name="addQuestion" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/question/addQuestion.jsp" />
+	</definition>
+	
+	<definition name="viewAllQuestions" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/question/viewAllQuestions.jsp" />
+	</definition>
+
+
+	<!--
+		######### QUESTIONANSWER #########
+	-->
+
+
+	
+	<definition name="addQuestionAnswer" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/questionAnswer/addQuestionAnswer.jsp" />
+	</definition>
+
+	<definition name="viewAllQuestionsAnswers" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/questionAnser/viewAllQuestionsAnswers.jsp" />
+	</definition>
+
+	<definition name="questionAnswer" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/timerHeader.jsp" />
+		<put name="contentPanel" value="/Jsp/questionAnswer/questionAnswer.jsp" />
+	</definition>
+
+	<definition name="questionAnswer1" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="contentPanel" value="/Jsp/questionAnswer/questionAnswer.jsp" />
+	</definition>
+
+
+	<!--
+		######### TESTOBJECTIVE #########
+	-->
+
+	<definition name="addTestObjective" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/testObjective/addTestObjective.jsp" />
+	</definition>
+	<definition name="testObjective" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+
+		<put name="contentPanel" value="/Jsp/testObjective/testObjective.jsp" />
+	</definition>
+
+	<definition name="viewAllTestObjective" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/testObjective/viewAllQuestionType.jsp" />
+	</definition>
+	
+	
+	<!--
+		######### RESULT #########
+	-->
+
+
+	<definition name="result" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="contentPanel" value="/Jsp/result/displayResult.jsp" />
+	</definition>
+	
+	<definition name="searchResults" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/result/searchResults.jsp" />
+	</definition>
+
+	<!--
+		######### STATIC #########
+	-->
+
+
+	<definition name="home" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/static/home.jsp" />
+	</definition>
+
+	<definition name="help" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/static/help.jsp" />
+	</definition>
+	
+	<definition name="contactUs" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/static/contactUs.jsp" />
+	</definition>
+	
+	<definition name="aboutUs" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/static/aboutUs.jsp" />
+	</definition>
+
+	<definition name="sitemap" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/static/sitemap.jsp" />
+	</definition>
+
+
+	<!--
+		######### TEST #########
+	-->
+
+	<definition name="allTest" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/test/allTest.jsp" />
+	</definition>
+
+	<definition name="viewAllTest" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/test/viewAllTest.jsp" />
+	</definition>
+
+	<definition name="viewTest" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/test/viewTest.jsp" />
+	</definition>
+
+
+	<!--
+		######### TESTTYPE #########
+	-->
+
+
+	<definition name="viewAllTestType" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/testType/viewAllTestType.jsp" />
+	</definition>
+
+	<definition name="addTest" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/testType/addTest.jsp" />
+
+	</definition>
+
+	
+	
+	
+	<!--
+		######### USER #########
+	-->
+
+
+	<definition name="deleteUser" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/user/deleteUser.jsp" />
+	</definition>
+
+	<definition name="updateProfile" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/user/updateProfile.jsp" />
+	</definition>
+
+	<definition name="viewProfile" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/user/viewProfile.jsp" />
+	</definition>
+
+	<definition name="viewAllUsers" page="/Jsp/layout/layout.jsp">
+		<put name="header" value="/Jsp/layout/header.jsp" />
+		<put name="footer" value="/Jsp/layout/footer.jsp" />
+		<put name="verticalMenuBar" value="/testType.html" />
+		<put name="contentPanel" value="/Jsp/user/viewAllUsers.jsp" />
+	</definition>
+
+
+
+
+
+
+
+
+	<!--
+		<definition name="testObjective" page="/Jsp/layout/layout.jsp"> <put
+		name="header" value="/Jsp/layout/header.jsp" /> <put name="footer"
+		value="/Jsp/layout/footer.jsp" /> <put name="contentPanel"
+		value="/Jsp/testObjective/testObjective.jsp" /> </definition>
+	-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--
+		<definition name="advancedSearch" page="/Jsp/layout/layout.jsp"> <put
+		name="header" value="/Jsp/layout/header.jsp" /> <put name="footer"
+		value="/Jsp/layout/footer.jsp" /> <put name="verticalMenuBar"
+		value="/testType.html" /> <put name="contentPanel"
+		value="/Jsp/advancedSearch.jsp" /> </definition>
+	-->
+	<!--
+		<definition name="administratorHomePage"
+		page="/Jsp/layout/layout.jsp"> <put name="header"
+		value="/Jsp/layout/header.jsp" /> <put name="footer"
+		value="/Jsp/layout/footer.jsp" /> <put name="verticalMenuBar"
+		value="/testType.html" /> <put name="contentPanel"
+		value="/Jsp/administratorHomePage.jsp" /> </definition>
+	-->
+
+	<!--
+		<definition name="addNewCategory" page="/Jsp/layout/layout.jsp"> <put
+		name="header" value="/Jsp/layout/header.jsp" /> <put name="footer"
+		value="/Jsp/layout/footer.jsp" /> <put name="verticalMenuBar"
+		value="/testType.html" /> <put name="contentPanel"
+		value="/Jsp/addNewCategory.jsp" /> </definition>
+	-->
+
+
+
+
+
+
+</tiles-definitions>

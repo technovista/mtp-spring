@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-lazy="false"
+	package="com.array.testprep.model">
+
+	<class name="Test" table="test">
+		<composite-id>
+			<key-property name="testId" column="testId" />
+		</composite-id>
+
+		<property name="testName" type="java.lang.String"
+			column="testName" length="80" />
+		<property name="passingPercentage" type="java.lang.Integer"
+			column="passingPercentage" />
+		<property name="totalNumberOfQuestion" type="java.lang.Integer"
+			column="totalNumberOfQuestion" />
+		<property name="testType" type="java.lang.String"
+			column="testType" length="80" />
+		
+		
+	</class>
+</hibernate-mapping>

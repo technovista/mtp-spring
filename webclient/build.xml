@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="webclient">
+    <property environment="env"/>
+    <property name="webclient.location" value="../webclient"/>
+    <property name="ECLIPSE_HOME" value="../../../download/eclipse"/>
+    <property name="testprepdomain.location" value="../testprepdomain"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="testprepdomain.classpath">
+        <pathelement location="${testprepdomain.location}/bin"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/commons-logging-1.0.4.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/commons-validator-1.3.0.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/dom4j-1.6.1.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/ejb3-persistence.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/hibernate-commons-annotations.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/hibernate-entitymanager.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/hibernate-validator.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/hibernate3.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/jaas.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/javassist.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/jaxen-1.1-beta-7.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/jboss-archive-browsing.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/jdbc2_0-stdext.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/jsf-api.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/jsf-impl.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/jstl-1.2.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/jstl.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/jta.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/junit.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/log4j-1.2.11.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/mail.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/mysql-connector-java-3.1.6-bin.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/servlet-api.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/sitemesh-2.2.1.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/spring-modules-validation-0.8.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/spring.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/standard.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/struts.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/xerces-2.6.2.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/xml-apis.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/activation.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/ajaxanywhere-1.2-rc2.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/antlr-2.7.6.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/asm-attrs.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/asm.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/cglib-2.1.3.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/commons-beanutils-1.7.0.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/commons-collections-2.1.1.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/commons-collections.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/commons-digester.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/commons-fileupload-1.2.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/commons-io-1.2-2006-03-19.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/commons-lang-2.1-2005-06-12.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/commons-logging.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/derbyclient.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/displaytag-1.1.1.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/ehcache-1.2.3.jar"/>
+        <pathelement location="${webclient.location}/WebRoot/WEB-INF/lib/hibernate-annotations.jar"/>
+    </path>
+    <path id="Web App Libraries.libraryclasspath">
+        <pathelement location="WebRoot/WEB-INF/lib/activation.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/ajaxanywhere-1.2-rc2.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/antlr-2.7.6.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/asm-attrs.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/asm.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/cglib-2.1.3.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-beanutils-1.7.0.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-collections-2.1.1.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-collections.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-digester.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-fileupload-1.2.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-io-1.2-2006-03-19.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-lang-2.1-2005-06-12.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-logging-1.0.4.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-logging.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-validator-1.3.0.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/derbyclient.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/displaytag-1.1.1.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/dom4j-1.6.1.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/ehcache-1.2.3.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/ejb3-persistence.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/hibernate-annotations.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/hibernate-commons-annotations.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/hibernate-entitymanager.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/hibernate-validator.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/hibernate3.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jaas.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/javassist.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jaxen-1.1-beta-7.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jboss-archive-browsing.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jdbc2_0-stdext.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jsf-api.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jsf-impl.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jstl-1.2.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jstl.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jta.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/junit.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/log4j-1.2.11.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/mail.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/mysql-connector-java-3.1.6-bin.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/servlet-api.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/sitemesh-2.2.1.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/spring-modules-validation-0.8.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/spring.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/standard.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/struts.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/xerces-2.6.2.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/xml-apis.jar"/>
+    </path>
+    <path id="EAR Libraries.libraryclasspath"/>
+    <path id="Server Library [Apache Tomcat v6.0NEw ] (unbound).libraryclasspath"/>
+    <path id="webclient.classpath">
+        <pathelement location="WebRoot/WEB-INF/classes"/>
+        <path refid="testprepdomain.classpath"/>
+        <pathelement location="WebRoot/WEB-INF/lib/activation.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/ajaxanywhere-1.2-rc2.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/antlr-2.7.6.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/asm-attrs.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/asm.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/cglib-2.1.3.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-beanutils-1.7.0.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-collections-2.1.1.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-collections.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-digester.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-fileupload-1.2.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-io-1.2-2006-03-19.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-lang-2.1-2005-06-12.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-logging-1.0.4.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-logging.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/commons-validator-1.3.0.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/derbyclient.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/displaytag-1.1.1.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/dom4j-1.6.1.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/ehcache-1.2.3.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/ejb3-persistence.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/hibernate-annotations.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/hibernate-commons-annotations.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/hibernate-entitymanager.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/hibernate-validator.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/hibernate3.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jaas.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/javassist.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jaxen-1.1-beta-7.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jboss-archive-browsing.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jdbc2_0-stdext.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jsf-api.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jsf-impl.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jstl-1.2.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jstl.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/jta.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/junit.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/log4j-1.2.11.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/mail.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/mysql-connector-java-3.1.6-bin.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/servlet-api.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/sitemesh-2.2.1.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/spring-modules-validation-0.8.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/spring.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/standard.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/struts.jar"/>
+        <pathelement location="WebRoot/WEB-INF/lib/xerces-2.6.2.jar"/>
+        <path refid="Web App Libraries.libraryclasspath"/>
+        <path refid="EAR Libraries.libraryclasspath"/>
+        <path refid="Server Library [Apache Tomcat v6.0NEw ] (unbound).libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="WebRoot/WEB-INF/classes"/>
+        <copy includeemptydirs="false" todir="WebRoot/WEB-INF/classes">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="WebRoot/WEB-INF/classes"/>
+    </target>
+    <target depends="clean" name="cleanall">
+        <ant antfile="build.xml" dir="${testprepdomain.location}" inheritAll="false" target="clean"/>
+    </target>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects">
+        <ant antfile="build.xml" dir="${testprepdomain.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="WebRoot/WEB-INF/classes" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="webclient.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+</project>

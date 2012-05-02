@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-lazy="false"
+	package="com.array.testprep.model">
+
+	<class name="QuestionType" table="questiontype">
+		<composite-id>
+			<key-property name="questionTypeId" column="questionTypeId" />
+		</composite-id>
+
+		<property name="questionType" type="java.lang.String"
+			column="questionType" length="250" />		
+		
+					
+			<property name="testId" type="java.lang.Integer"
+			column="testId"  />
+			
+		
+		<!-- Associations -->
+		
+	
+			
+			<many-to-one name="test" column="testId" 
+			class="Test" not-null="true" lazy="false" insert="false"
+			update="false" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,1182 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
+	<!--  add reference bean service to validator   -->
+
+	<!--*******************   Validators   ************************       -->
+
+	<bean id="testTakerValidator"
+		class="com.array.testprep.springvalidator.TestTakerValidator">
+		<property name="service">
+			<ref bean="testTakerService" />
+		</property>
+	</bean>
+	<bean id="changePasswordValidator"
+		class="com.array.testprep.springvalidator.ChangePasswordValidator">
+		<property name="service">
+			<ref bean="testTakerService" />
+		</property>
+	</bean>
+
+	<bean id="registrationValidator"
+		class="com.array.testprep.springvalidator.RegistrationValidator">
+		<property name="service">
+			<ref bean="registrationService" />
+		</property>
+	</bean>
+
+
+
+	<bean id="updateProfileValidator"
+		class="com.array.testprep.springvalidator.TestTakerValidator" />
+
+
+	<bean id="forgotPasswordValidator"
+		class="com.array.testprep.springvalidator.ForgotPasswordValidator">
+		<property name="service">
+			<ref bean="forgotPasswordService" />
+		</property>
+	</bean>
+
+<bean id="testValidator"
+		class="com.array.testprep.springvalidator.TestValidator">
+		<property name="service">
+			<ref bean="testService" />
+		</property>
+	</bean>
+
+	<!--********************* List Controllers    ************************       -->
+
+
+
+	<bean id="logoutListController" class="com.array.testprep.springcontroller.ListController">
+		<property name="service">
+			<ref bean="testTakerService" />
+		</property>
+		<property name="view">
+			<value>errorPage</value>
+		</property>
+		<property name="entity">
+			<value>Logout</value>
+		</property>
+	</bean>
+
+
+
+	<bean id="allTestTakerListController"
+		class="com.array.testprep.springcontroller.ListController">
+		<property name="service">
+			<ref bean="testTakerService" />
+		</property>
+		<property name="view">
+			<value>viewAllUsers</value>
+		</property>
+		<property name="entity">
+			<value>TestTaker</value>
+		</property>
+	</bean>
+
+	<!--  add new bean for  TestType list  -->
+
+
+
+
+	<bean id="administratorHomePageListController"
+		class="com.array.testprep.springcontroller.ListController">
+		<property name="service">
+			<ref bean="testTakerService" />
+		</property>
+		<property name="view">
+			<value>administratorHomePage</value>
+		</property>
+		<property name="entity">
+			<value>administratorHomePage</value>
+		</property>
+	</bean>
+	
+	<bean id="viewAllQuestionsListController"
+		class="com.array.testprep.springcontroller.ListController">
+		<property name="service">
+			<ref bean="questionBankService" />
+		</property>
+		<property name="view">
+			<value>viewAllQuestions</value>
+		</property>
+		<property name="entity">
+			<value>question</value>
+		</property>
+	</bean>
+	
+	<bean id="viewAllQuestionsAnswersListController"
+		class="com.array.testprep.springcontroller.ListController">
+		<property name="service">
+			<ref bean="questionAnswerRelationshipService" />
+		</property>
+		<property name="view">
+			<value>viewAllQuestionsAnswers</value>
+		</property>
+		<property name="entity">
+			<value>questionAnswer</value>
+		</property>
+	</bean>
+	
+	
+	<bean id="viewAllTestObjectiveListController"
+		class="com.array.testprep.springcontroller.ListController">
+		<property name="service">
+			<ref bean="testObjectiveService" />
+		</property>
+		<property name="view">
+			<value>viewAllTestObjective</value>
+		</property>
+		<property name="entity">
+			<value>testObjective</value>
+		</property>
+	</bean>
+	
+	<bean id="viewAllTestTypeListController"
+		class="com.array.testprep.springcontroller.ListController">
+		<property name="service">
+			<ref bean="testService" />
+		</property>
+		<property name="view">
+			<value>viewAllTestType</value>
+		</property>
+		<property name="entity">
+			<value>testType</value>
+		</property>
+	</bean>
+	
+		
+	<bean id="viewAllAnswersListController"
+		class="com.array.testprep.springcontroller.ListController">
+		<property name="service">
+			<ref bean="answerBankService" />
+		</property>
+		<property name="view">
+			<value>viewAllAnswers</value>
+		</property>
+		<property name="entity">
+			<value>answer</value>
+		</property>
+	</bean>
+	
+
+	<bean id="homeListController" class="com.array.testprep.springcontroller.ListController">
+		
+		
+		<property name="service">
+			<ref bean="testTakerService" />
+		</property>
+		<property name="view">
+			<value>home</value>
+		</property>
+		<property name="entity">
+			<value>Home</value>
+		</property>
+
+	</bean>
+
+	<bean id="resultListController" class="com.array.testprep.springcontroller.ListController">
+		<property name="service">
+			<ref bean="customeTestService" />
+		</property>
+		<property name="view">
+			<value>result</value>
+		</property>
+		<property name="entity">
+			<value>customeTest</value>
+		</property>
+
+	</bean>
+	
+	
+	<bean id="viewTestListController" class="com.array.testprep.springcontroller.ListController">
+		<property name="service">
+			<ref bean="customeTestQuestionService" />
+		</property>
+		<property name="view">
+			<value>viewTest</value>
+		</property>
+		<property name="entity">
+			<value>CustomeTestQuestion</value>
+		</property>
+
+	</bean>
+	
+	<bean id="sentPasswordListController"
+		class="com.array.testprep.springcontroller.ListController">
+		<property name="service">
+			<ref bean="forgotPasswordService" />
+		</property>
+		<property name="view">
+			<value>sentPassword</value>
+		</property>
+		<property name="entity">
+			<value>TestTaker</value>
+		</property>
+		<property name="sessionRequired">
+			<value>true</value>
+		</property>
+	</bean>
+
+	<bean id="contactUsListController"
+		class="com.array.testprep.springcontroller.ListController">
+		<property name="entity">
+			<value>TestTaker</value>
+		</property>
+		<property name="view">
+			<value>contactUs</value>
+		</property>
+		<property name="service">
+			<ref bean="forgotPasswordService" />
+		</property>
+
+	</bean>
+
+	<bean id="viewAllTestListController"
+		class="com.array.testprep.springcontroller.ListController">
+		<property name="view">
+			<value>viewAllTest</value>
+		</property>
+		<property name="service">
+			<ref bean="customeTestService" />
+		</property>
+		<property name="entity">
+			<value>AllCustomeTest</value>
+		</property>
+	</bean>
+
+	<bean id="aboutUsListController"
+		class="com.array.testprep.springcontroller.ListController">
+		<property name="view">
+			<value>aboutUs</value>
+		</property>
+		<property name="service">
+			<ref bean="forgotPasswordService" />
+		</property>
+		<property name="entity">
+			<value>Error</value>
+		</property>
+	</bean>
+	
+	<bean id="helpListController" class="com.array.testprep.springcontroller.ListController">
+		<property name="service">
+			<ref bean="forgotPasswordService" />
+		</property>
+		<property name="view">
+			<value>help</value>
+		</property>
+		<property name="entity">
+			<value>TestTaker</value>
+		</property>
+	</bean>
+
+	<bean id="testTypeListController"
+		class="com.array.testprep.springcontroller.ListController">
+		<property name="service">
+			<ref bean="testService" />
+		</property>
+		<property name="view">
+			<value>verticalMenuBar</value>
+		</property>
+		<property name="entity">
+			<value>Test</value>
+		</property>
+	</bean>
+
+
+	<bean id="searchTestObjectiveListController"
+		class="com.array.testprep.springcontroller.ListController">
+		<property name="service">
+			<ref bean="testObjectiveService" />
+		</property>
+		<property name="view">
+			<value>searchResults</value>
+
+		</property>
+
+		<property name="entity">
+			<value>TestObjective</value>
+		</property>
+	</bean>
+
+	<bean id="questionAnswerListController"
+		class="com.array.testprep.springcontroller.ListController">
+		<property name="service">
+			<ref bean="customeTestService" />
+		</property>
+		<property name="view">
+			<value>questionAnswer</value>
+
+		</property>
+
+		<property name="entity">
+			<value>Test</value>
+		</property>
+	</bean>
+
+
+
+	<!--********************* EOF List Controllers    ************************   -->
+
+	<!--********************* Form Controllers    ************************       -->
+
+<!--********************* QUESTION Controllers    ************************       -->
+	<bean id="questionFormController"
+		class="com.array.testprep.springcontroller.FormController">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="service">
+			<ref bean="questionBankService" />
+		</property>
+		<property name="formView">
+			<value>question</value>
+		</property>
+		<property name="successView">
+			<value>result.html</value>
+		</property>
+		<property name="entity">
+			<value>Question</value>
+		</property>
+
+		<property name="commandName">
+			<value>question</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.QuestionBank</value>
+		</property>
+
+
+	</bean>
+	<bean id="testObjectiveFormController"
+		class="com.array.testprep.springcontroller.FormController">
+
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="service">
+			<ref bean="questionAnswerRelationshipService" />
+		</property>
+		<property name="formView">
+			<value>testObjective</value>
+		</property>
+		<!--  dont use ext .html here, its not redirecting -->
+		<property name="successView">
+			<value>questionAnswer.html</value>
+		</property>
+
+		<property name="entity">
+			<value>TestObjective</value>
+		</property>
+
+		<property name="commandName">
+			<value>testObjective</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.TestObjective</value>
+		</property>
+		<property name="prePopulate">
+			<value>true</value>
+		</property>
+
+	</bean>
+	
+	<bean id="addQuestionFormController"
+		class="com.array.testprep.springcontroller.FormController">
+
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="service">
+			<ref bean="questionBankService" />
+		</property>
+		<property name="formView">
+			<value>addQuestion</value>
+		</property>
+		<!--  dont use ext .html here, its not redirecting -->
+		<property name="successView">
+			<value>viewAllQuestions.html</value>
+		</property>
+
+		<property name="entity">
+			<value>Question</value>
+		</property>
+
+		<property name="commandName">
+			<value>questionBank</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.QuestionBank</value>
+		</property>
+		<property name="prePopulate">
+			<value>true</value>
+		</property>
+
+	</bean>
+	<bean id="addTestObjectiveFormController"
+		class="com.array.testprep.springcontroller.FormController">
+
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="service">
+			<ref bean="testObjectiveService" />
+		</property>
+		<property name="formView">
+			<value>addTestObjective</value>
+		</property>
+		<!--  dont use ext .html here, its not redirecting -->
+		<property name="successView">
+			<value>viewAllTestObjective.html</value>
+		</property>
+
+		<property name="entity">
+			<value>TestObjective</value>
+		</property>
+
+		<property name="commandName">
+			<value>testObjective</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.TestObjective</value>
+		</property>
+		<property name="prePopulate">
+			<value>true</value>
+		</property>
+
+	</bean>
+	<bean id="addQuestionAnswerFormController"
+		class="com.array.testprep.springcontroller.FormController">
+
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="service">
+			<ref bean="questionAnswerRelationshipService" />
+		</property>
+		<property name="formView">
+			<value>addQuestionAnswer</value>
+		</property>
+		<!--  dont use ext .html here, its not redirecting -->
+		<property name="successView">
+			<value>addQuestionsAnswer.html</value>
+		</property>
+
+		<property name="entity">
+			<value>QuestionAnswer</value>
+		</property>
+
+		<property name="commandName">
+			<value>questionAnswerRelationship</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.QuestionAnswerRelationship</value>
+		</property>
+		<property name="prePopulate">
+			<value>true</value>
+		</property>
+
+	</bean>
+	
+	<bean id="addAnswerFormController"
+		class="com.array.testprep.springcontroller.FormController">
+
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="service">
+			<ref bean="answerBankService" />
+		</property>
+		<property name="formView">
+			<value>addAnswer</value>
+		</property>
+		<!--  dont use ext .html here, its not redirecting -->
+		<property name="successView">
+			<value>viewAllAnswers.html</value>
+		</property>
+
+		<property name="entity">
+			<value>Answer</value>
+		</property>
+
+		<property name="commandName">
+			<value>answerBank</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.AnswerBank</value>
+		</property>
+		<property name="prePopulate">
+			<value>true</value>
+		</property>
+
+	</bean>
+	<bean id="questionAnswerFormController"
+		class="com.array.testprep.springcontroller.FormController">
+
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="service">
+			<ref bean="customeTestService" />
+		</property>
+		<property name="formView">
+			<value>questionAnswer</value>
+		</property>
+		<!--  dont use ext .html here, its not redirecting -->
+		<property name="successView">
+			<value>result.html</value>
+		</property>
+
+		<property name="entity">
+			<value>customeTest</value>
+		</property>
+
+		<property name="commandName">
+			<value>customeTest</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.CustomeTest</value>
+		</property>
+		<property name="prePopulate">
+			<value>true</value>
+		</property>
+
+	</bean>
+	
+	<bean id="allTestListController"
+		class="com.array.testprep.springcontroller.ListController">
+
+
+		<property name="service">
+			<ref bean="testService" />
+		</property>
+		<property name="view">
+			<value>allTest</value>
+
+		</property>
+
+		<property name="entity">
+			<value>Test</value>
+		</property>
+
+
+		
+	</bean>
+	
+	
+	
+	
+	<!--********************* TESTTYPE Controllers    ************************       -->
+	
+	<bean id="addTestFormController"
+		class="com.array.testprep.springcontroller.FormController">
+
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="validator">
+			<ref bean="testValidator" />
+		</property>
+		<property name="service">
+			<ref bean="testService" />
+		</property>
+		<property name="formView">
+			<value>addTest</value>
+		</property>
+		<!--  dont use ext .html here, its not redirecting -->
+		<property name="successView">
+			<value>viewAllTestType.html</value>
+		</property>
+
+		<property name="entity">
+			<value>TestType</value>
+		</property>
+
+		<property name="commandName">
+			<value>test</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.Test</value>
+		</property>
+		<property name="prePopulate">
+			<value>true</value>
+		</property>
+
+	</bean>
+	
+	
+	
+	
+	
+	<bean id="objectivesFormController"
+		class="com.array.testprep.springcontroller.FormController">
+
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="service">
+			<ref bean="questionAnswerRelationshipService" />
+		</property>
+		<property name="formView">
+			<value>objectives</value>
+		</property>
+		<!--  dont use ext .html here, its not redirecting -->
+		<property name="successView">
+			<value>questionAnswer.html</value>
+		</property>
+
+		<property name="entity">
+			<value>TestObjective</value>
+		</property>
+
+		<property name="commandName">
+			<value>testObjective</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.TestObjective</value>
+		</property>
+		<property name="prePopulate">
+			<value>true</value>
+		</property>
+
+	</bean>
+	
+	
+	
+	
+
+	<bean id="searchTestObjectiveFormController"
+		class="com.array.testprep.springcontroller.FormController">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+
+		<property name="service">
+			<ref bean="testObjectiveService" />
+		</property>
+		<property name="formView">
+			<value>searchResults</value>
+
+		</property>
+
+		<property name="entity">
+			<value>TestObjective</value>
+		</property>
+
+
+		<property name="commandName">
+			<value>testObjective</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.TestObjective</value>
+		</property>
+
+
+		<property name="successView">
+			<value>questionAnswer.html</value>
+		</property>
+
+	</bean>
+
+
+
+	<bean id="resultFormController" class="com.array.testprep.springcontroller.FormController">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+
+		<property name="service">
+			<ref bean="customeTestService" />
+		</property>
+		<property name="formView">
+			<value>result</value>
+
+		</property>
+
+		<property name="entity">
+			<value>Result</value>
+		</property>
+
+
+		<property name="commandName">
+			<value>customeTest</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.CustomeTest</value>
+		</property>
+
+
+		<property name="successView">
+			<value>testObjective.html</value>
+		</property>
+
+	</bean>
+<!--********************* USER Controllers    ************************       -->
+
+	<bean id="testTakerFormController"
+		class="com.array.testprep.springcontroller.FormController">
+
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+
+		<property name="validator">
+			<ref bean="testTakerValidator" />
+		</property>
+
+		<property name="commandName">
+			<value>testTaker</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.TestTaker</value>
+		</property>
+
+		<property name="formView">
+			<value>login</value>
+		</property>
+
+		<property name="successView">
+			<value>home.html</value>
+		</property>
+
+		<property name="service">
+			<ref bean="testTakerService" />
+		</property>
+		<property name="entity">
+			<value>TestTaker</value>
+		</property>
+		<property name="sessionRequired">
+			<value>true</value>
+		</property>
+	</bean>
+	<bean id="deleteUserFormController"
+		class="com.array.testprep.springcontroller.FormController">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandName">
+			<value>testTaker</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.TestTaker</value>
+		</property>
+
+		<property name="formView">
+			<value>deleteUser</value>
+		</property>
+
+		<property name="successView">
+			<value>users.html</value>
+		</property>
+
+		<property name="service">
+			<ref bean="testTakerService" />
+		</property>
+
+		<property name="entity">
+			<value>TestTaker</value>
+		</property>
+	</bean>
+	<bean id="updateProfileFormController"
+		class="com.array.testprep.springcontroller.FormController">
+
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandName">
+			<value>testTaker</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.TestTaker</value>
+		</property>
+
+		<property name="formView">
+			<value>updateProfile</value>
+		</property>
+
+		<property name="successView">
+			<value>home.html</value>
+		</property>
+
+		<property name="service">
+			<ref bean="testTakerService" />
+		</property>
+
+		<property name="entity">
+			<value>TestTaker</value>
+		</property>
+	</bean>
+
+
+	<bean id="registrationFormController"
+		class="com.array.testprep.springcontroller.FormController">
+
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+
+		<property name="validator">
+			<ref bean="registrationValidator" />
+		</property>
+
+		<property name="commandName">
+			<value>testTaker</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.TestTaker</value>
+		</property>
+
+		<property name="formView">
+			<value>registration</value>
+		</property>
+
+		<property name="successView">
+			<value>login.html</value>
+		</property>
+
+		<property name="service">
+			<ref bean="registrationService" />
+		</property>
+		<property name="entity">
+			<value>TestTaker</value>
+		</property>
+
+		<property name="sessionRequired">
+			<value>true</value>
+		</property>
+	</bean>
+
+	<bean id="errorFormController" class="com.array.testprep.springcontroller.FormController">
+
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+
+		<property name="commandName">
+			<value>error</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.TestTaker</value>
+		</property>
+
+		<property name="formView">
+			<value>errorPage</value>
+		</property>
+
+		<property name="successView">
+			<value>registration.html</value>
+		</property>
+
+		<property name="service">
+			<ref bean="testTakerService" />
+		</property>
+
+		<property name="entity">
+			<value>Error</value>
+		</property>
+	</bean>
+	<bean id="forgotPasswordFormController"
+		class="com.array.testprep.springcontroller.FormController">
+
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+
+		<property name="validator">
+			<ref bean="forgotPasswordValidator" />
+		</property>
+
+		<property name="commandName">
+			<value>testTaker</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.TestTaker</value>
+		</property>
+
+		<property name="formView">
+			<value>forgotPassword</value>
+		</property>
+
+		<property name="successView">
+			<value>sentPassword.html</value>
+		</property>
+
+		<property name="service">
+			<ref bean="forgotPasswordService" />
+		</property>
+
+		<property name="entity">
+			<value>TestTaker</value>
+		</property>
+
+		<property name="sessionRequired">
+			<value>true</value>
+		</property>
+	</bean>
+	<bean id="viewProfileFormController"
+		class="com.array.testprep.springcontroller.FormController">
+
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+
+		<property name="commandName">
+			<value>testTaker</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.TestTaker</value>
+		</property>
+
+		<property name="formView">
+			<value>viewProfile</value>
+		</property>
+
+		<property name="successView">
+			<value>home.html</value>
+		</property>
+
+		<property name="service">
+			<ref bean="testTakerService" />
+		</property>
+
+		<property name="entity">
+			<value>TestTaker</value>
+		</property>
+	</bean>
+	<bean id="changePasswordFormController"
+		class="com.array.testprep.springcontroller.FormController">
+
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="validator">
+			<ref bean="changePasswordValidator" />
+		</property>
+		<property name="commandName">
+			<value>testTaker</value>
+		</property>
+
+		<property name="commandClass">
+			<value>com.array.testprep.model.TestTaker</value>
+		</property>
+
+		<property name="formView">
+			<value>changePassword</value>
+		</property>
+
+		<property name="successView">
+			<value>home.html</value>
+		</property>
+
+		<property name="service">
+			<ref bean="testTakerService" />
+		</property>
+
+		<property name="entity">
+			<value>TestTaker</value>
+		</property>
+
+	</bean>
+
+
+	 <!-- ************************** All Sources  ******************          -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+
+			<list>
+				<value>messages</value>
+				<value>labels</value>
+			</list>
+			<!--			<value>messages</value>-->
+		</property>
+	</bean>
+	<bean id="cp" class="com.array.testprep.util.ContextProvider"></bean>
+
+	<!-- ******************************* Mapping  ****************************      -->
+
+	<bean id="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="urlMap">
+			<map>
+
+				<!-- ************ User   ***********************************  -->
+
+				<entry key="/sentPassword.html">
+					<ref bean="sentPasswordListController" />
+				</entry>
+				<entry key="/login.html">
+					<ref bean="testTakerFormController" />
+				</entry>
+				<entry key="/registration.html">
+					<ref bean="registrationFormController" />
+				</entry>
+				<entry key="/viewProfile.html">
+					<ref bean="viewProfileFormController" />
+				</entry>
+				<entry key="/updateProfile.html">
+					<ref bean="updateProfileFormController" />
+				</entry>
+				<entry key="/deleteUser.html">
+					<ref bean="deleteUserFormController" />
+				</entry>
+				<entry key="/logout.html">
+					<ref bean="logoutListController" />
+				</entry>
+
+				<entry key="/forgotPassword.html">
+					<ref bean="forgotPasswordFormController" />
+				</entry>
+				<entry key="/changePassword.html">
+					<ref bean="changePasswordFormController" />
+				</entry>
+				<!-- ************  Extra    ***********************************  -->
+
+				<entry key="/administratorHomePage.html">
+					<ref bean="administratorHomePageListController" />
+				</entry>
+				<entry key="/home.html">
+					<ref bean="homeListController" />
+				</entry>
+				<entry key="/allTest.html">
+					<ref bean="allTestListController" />
+				</entry>
+
+				<entry key="/contactUs.html">
+					<ref bean="contactUsListController" />
+				</entry>
+				<entry key="/aboutUs.html">
+					<ref bean="aboutUsListController" />
+				</entry>
+				<entry key="/help.html">
+					<ref bean="helpListController" />
+				</entry>
+				<entry key="/errorPage.html">
+					<ref bean="errorFormController" />
+				</entry>
+
+
+				<entry key="/result.html">
+					<ref bean="resultListController" />
+				</entry>
+
+				<!-- ************ Test  ***********************************  -->
+				<entry key="/viewAllTest.html">
+					<ref bean="viewAllTestListController" />
+				</entry>
+				  
+				<entry key="/viewTest.html">
+					<ref bean="viewTestListController" />
+				</entry>
+
+				<!-- ************ QUESTIONS  ***********************************  -->
+				<entry key="/testObjective.html">
+					<ref bean="testObjectiveFormController" />
+				</entry>
+				<entry key="/questionAnswer.html">
+					<ref bean="questionAnswerFormController" />
+				</entry>
+				<entry key="/question.html">
+					<ref bean="questionFormController" />
+				</entry>
+				<entry key="/viewAllQuestions.html">
+					<ref bean="viewAllQuestionsListController" />
+				</entry>
+				<entry key="/addQuestion.html">
+					<ref bean="addQuestionFormController" />
+				</entry>
+				<entry key="/addQuestionAnswer.html">
+					<ref bean="addQuestionAnswerFormController" />
+				</entry>
+				<entry key="/viewAllQuestionsAnswers.html">
+					<ref bean="viewAllQuestionsAnswersListController" />
+				</entry>
+				<entry key="/objectives.html">
+					<ref bean="objectivesFormController" />
+				</entry>
+				
+				<entry key="/viewAllTestObjective.html">
+					<ref bean="viewAllTestObjectiveListController" />
+				</entry>
+				<entry key="/addTestObjective.html">
+					<ref bean="addTestObjectiveFormController" />
+				</entry>
+				
+				
+<!-- ************ ANSWERS  ***********************************  -->
+				
+				
+				
+				
+				<entry key="/viewAllAnswers.html">
+					<ref bean="viewAllAnswersListController" />
+				</entry>
+				<entry key="/addAnswer.html">
+					<ref bean="addAnswerFormController" />
+				</entry>
+				
+				
+				<!-- ************ TESTTYPE  ***********************************  -->
+				<entry key="/testType.html">
+					<ref bean="testTypeListController" />
+				</entry>
+				<entry key="addTest.html">
+					<ref bean="addTestFormController" />
+				</entry>
+				<entry key="viewAllTestType.html">
+					<ref bean="viewAllTestTypeListController" />
+				</entry>
+				
+
+				<!-- ************ SEARCH  ***********************************  -->
+				<entry key="/searchResults.html">
+					<ref bean="searchTestObjectiveFormController" />
+				</entry>
+
+
+			</map>
+		</property>
+	</bean>
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles.TilesConfigurer">
+
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tile-definition.xml</value>
+			</list>
+		</property>
+	</bean>
+
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>
+				org.springframework.web.servlet.view.tiles.TilesJstlView
+			</value>
+		</property>
+	</bean>
+
+</beans>

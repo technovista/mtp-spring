@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-lazy="false"
+	package="com.array.testprep.model">
+
+	<class name="AnswerBank" table="answerbank">
+		<composite-id>
+			<key-property name="answerId" column="answerId" />
+		</composite-id>
+
+		<property name="choice" type="java.lang.String"
+			column="choice" length="80" />
+		
+		
+	</class>
+</hibernate-mapping>

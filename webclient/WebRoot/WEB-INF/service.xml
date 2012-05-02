@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="testTakerService" class="com.array.testprep.springservice.TestTakerService"></bean>
+	
+	
+	<bean id="registrationService"
+		class="com.array.testprep.springservice.RegistrationService">
+	</bean>
+
+	
+	<bean id="forgotPasswordService"
+		class="com.array.testprep.springservice.ForgotPasswordService">
+	</bean>
+	<bean id="testService"
+		class="com.array.testprep.springservice.TestService">
+	</bean>
+	<bean id="customeTestService"
+		class="com.array.testprep.springservice.CustomeTestService">
+	</bean>
+	<bean id="customeTestQuestionService"
+		class="com.array.testprep.springservice.CustomeTestQuestionService">
+	</bean>
+
+	<bean id="testObjectiveService"
+		class="com.array.testprep.springservice.TestObjectiveService">
+	</bean>
+	<bean id="questionAnswerRelationshipService"
+		class="com.array.testprep.springservice.QuestionAnswerRelationshipService">
+	</bean>
+	<bean id="questionBankService"
+		class="com.array.testprep.springservice.QuestionBankService">
+	</bean>
+	
+	<bean id="answerBankService"
+		class="com.array.testprep.springservice.AnswerBankService">
+	</bean>
+</beans>

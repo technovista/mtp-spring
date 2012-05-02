@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-lazy="false"
+	package="com.array.testprep.model">
+
+	<class name="QuestionBank" table="questionbank">
+		<composite-id>
+			<key-property name="questionId" column="questionId" />
+		</composite-id>
+
+		<property name="question" type="java.lang.String"
+			column="question" length="250" />		
+		
+		<property name="challengeLevel" type="java.lang.Integer"
+			column="challengeLevel" />			
+			
+			
+		<property name="explanation" type="java.lang.String"
+			column="explanation" length="80" />
+		<property name="reference" type="java.lang.String"
+			column="reference" length="80" />
+		
+		<property name="testObjectiveId" type="java.lang.Integer"
+			column="testObjectiveId"  />
+			<property name="questionTypeId" type="java.lang.Integer"
+			column="questionTypeId"  />
+		<!-- Associations -->
+		
+		 <bag name="questionAnswerRelationship" cascade="all">           
+           
+            <key>
+                <column name="questionId"  />
+            </key>
+            <one-to-many class="QuestionAnswerRelationship" />
+        </bag>
+		
+		<many-to-one name="questionType" column="questionTypeId" 
+			class="QuestionType" not-null="true" lazy="false" insert="false"
+			update="false" />
+			
+			<many-to-one name="testObjective" column="testObjectiveId" 
+			class="TestObjective" not-null="true" lazy="false" insert="false"
+			update="false" />
+		
+	</class>
+</hibernate-mapping>

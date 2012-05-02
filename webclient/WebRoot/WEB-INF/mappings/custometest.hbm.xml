@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-lazy="false"
+	package="com.array.testprep.model">
+
+	<class name="CustomeTest" table="custometest">
+		<composite-id>
+			<key-property name="customeTestId" column="customeTestId" />
+		</composite-id>
+		
+		
+		<property name="testResultId" type="java.lang.Integer"
+			column="testResultId" />
+	
+		<property name="testTakerId" type="java.lang.Integer"
+			column="testTakerId" />
+	
+		<!-- Associations -->
+		<many-to-one name="testTaker" column="testTakerId"
+			class="TestTaker" not-null="true" lazy="false" insert="false"
+			update="false" />
+		<many-to-one name="testResult" column="testResultId"
+			class="TestResult" not-null="true" lazy="false" insert="false"
+			update="false" />
+		
+	</class>
+</hibernate-mapping>
+

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+<import resource="service.xml"/>
+	<bean id="bookDAO" class="dao.ServiceDAOImpl" singleton="false">
+		<constructor-arg>
+			<value>model.Book</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="formatDAO" class="dao.ServiceDAOImpl" singleton="false">
+		<constructor-arg>
+			<value>model.Format</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="linkDAO" class="dao.ServiceDAOImpl" singleton="false">
+		<constructor-arg>
+			<value>model.Link</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+
+	<bean id="categoryDAO" class="dao.ServiceDAOImpl"
+		singleton="false">
+		<constructor-arg>
+			<value>model.Category</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="loginDAO" class="dao.ServiceDAOImpl" singleton="false">
+		<constructor-arg>
+			<value>model.Login</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+
+		<property name="mappingDirectoryLocations">
+			<list>
+				<value>mappings</value>
+			</list>
+		</property>
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQL5Dialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.cache.use_query_cache">false</prop>
+				<prop key="hibernate.generate_statistics">true</prop>
+				<prop key="hibernate.cache.use_structured_entries">
+					true
+				</prop>
+				<prop key="hibernate.cache.use_second_level_cache">
+					false
+				</prop>
+			</props>
+		</property>
+	</bean>
+
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="url">
+			<value>jdbc:mysql://localhost:3308/technovista</value>
+		</property>
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="username">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value>12345</value>
+		</property>
+	</bean>
+	
+
+</beans>

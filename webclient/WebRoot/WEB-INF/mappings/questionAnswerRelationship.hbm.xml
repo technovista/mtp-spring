@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-lazy="false"
+	package="com.array.testprep.model">
+
+	<class name="QuestionAnswerRelationship" table="questionanswerrelationship">
+		<composite-id>
+			<key-property name="questionAnswerId" column="questionAnswerId" />
+		</composite-id>
+
+		
+	
+			    <property name="choiceDisplayOrder" type="int">
+            <column name="choiceDisplayOrder" not-null="true" />
+        </property>
+        <property name="isCorrectAnswer" type="string">
+            <column name="isCorrectAnswer" length="10" not-null="true" />
+        </property>
+        <property name="correctAnswerDisplayOrder" type="int">
+            <column name="correctAnswerDisplayOrder" not-null="true" />
+        </property>
+        
+        <property name="testObjectiveId" type="int">
+            <column name="testObjectiveId" not-null="true" />
+        </property>
+			
+			<!-- Associations -->
+			
+		<many-to-one name="questionBank" column="questionId" 
+			class="QuestionBank" not-null="true" lazy="false" insert="false"
+			update="false" />
+			
+		
+		<many-to-one name="answerBank" column="answerId"
+			class="AnswerBank" not-null="true" lazy="false" insert="false"
+			update="false" />
+		<many-to-one name="testObjective" column="testObjectiveId"
+			class="TestObjective" not-null="true" lazy="false" insert="false"
+			update="false" />
+	</class>
+</hibernate-mapping>

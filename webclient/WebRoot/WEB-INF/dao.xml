@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="questionBankDAO" class="com.array.testprep.dao.ServiceDAOImpl" singleton="false">
+		<constructor-arg>
+			<value>com.array.testprep.model.QuestionBank</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="customeTestQuestionDAO" class="com.array.testprep.dao.ServiceDAOImpl" singleton="false">
+		<constructor-arg>
+			<value>com.array.testprep.model.CustomeTestQuestion</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="answerBankDAO" class="com.array.testprep.dao.ServiceDAOImpl" singleton="false">
+		<constructor-arg>
+			<value>com.array.testprep.model.AnswerBank</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="customeTestDAO" class="com.array.testprep.dao.ServiceDAOImpl" singleton="false">
+		<constructor-arg>
+			<value>com.array.testprep.model.CustomeTest</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="testResultDAO" class="com.array.testprep.dao.ServiceDAOImpl" singleton="false">
+		<constructor-arg>
+			<value>com.array.testprep.model.TestResult</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+
+
+	<bean id="testObjectiveDAO" class="com.array.testprep.dao.ServiceDAOImpl"
+		singleton="false">
+		<constructor-arg>
+			<value>com.array.testprep.model.TestObjective</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="questionAnswerRelationshipDAO" class="com.array.testprep.dao.ServiceDAOImpl"
+		singleton="false">
+		<constructor-arg>
+			<value>com.array.testprep.model.QuestionAnswerRelationship</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="testTakerDAO" class="com.array.testprep.dao.ServiceDAOImpl" singleton="false">
+		<constructor-arg>
+			<value>com.array.testprep.model.TestTaker</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="testDAO" class="com.array.testprep.dao.ServiceDAOImpl" singleton="false">
+		<constructor-arg>
+			<value>com.array.testprep.model.Test</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="questionTypeDAO" class="com.array.testprep.dao.ServiceDAOImpl" singleton="false">
+		<constructor-arg>
+			<value>com.array.testprep.model.QuestionType</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+
+		<property name="mappingDirectoryLocations">
+			<list>
+				<value>WEB-INF/mappings</value>
+			</list>
+		</property>
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQL5Dialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.cache.use_query_cache">false</prop>
+				<prop key="hibernate.generate_statistics">true</prop>
+				<prop key="hibernate.cache.use_structured_entries">
+					true
+				</prop>
+				<prop key="hibernate.cache.use_second_level_cache">
+					false
+				</prop>
+				<!--  <prop key="hibernate.connection.release_mode">auto</prop>-->
+			</props>
+		</property>
+	</bean>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="url">
+		
+<!-- 		<value>jdbc:mysql://97.74.92.128:3306/techno1</value>  -->
+ 		<value>jdbc:mysql://dbmysql200.my-hosting-panel.com:3306/jrrohit_testperp</value> 
+		</property>
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="username">
+			<value>jrroh_testprep</value>
+		</property>
+		<property name="password">
+			<value>Techno123</value>
+		</property>
+	</bean>
+	
+	<!-- <bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="url">
+		<value>jdbc:mysql://localhost:3306/technovista</value>
+		
+		</property>
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="username">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value>12345</value>
+		</property>
+	</bean>
+-->
+</beans>
