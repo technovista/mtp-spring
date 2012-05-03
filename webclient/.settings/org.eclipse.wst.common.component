@@ -3,6 +3,14 @@
     <wb-module deploy-name="webclient">
         <wb-resource deploy-path="/" source-path="/WebRoot"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/classes"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/classes"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/classes"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/classes"/>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/testprepdomain/testprepdomain">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="/webclient"/>
         <property name="java-output-path" value="/webclient/WebRoot/WEB-INF/classes"/>
     </wb-module>

@@ -3,6 +3,7 @@
 	<name>webclient</name>
 	<comment></comment>
 	<projects>
+		<project>testprepdomain</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -45,14 +46,20 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.iam.jdt.core.mavenIncrementalBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>org.eclipse.jem.workbench.JavaEMFNature</nature>
-		<nature>com.genuitec.eclipse.ast.deploy.core.deploymentnature</nature>
-		<nature>com.genuitec.eclipse.j2eedt.core.webnature</nature>
-		<nature>org.eclipse.jdt.core.javanature</nature>
-		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
-		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
+		<nature>com.genuitec.eclipse.ast.deploy.core.deploymentnature</nature>
+		<nature>org.eclipse.iam.jdt.core.mavenNature</nature>
+		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.eclipse.jem.workbench.JavaEMFNature</nature>
+		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
+		<nature>com.genuitec.eclipse.j2eedt.core.webnature</nature>
 	</natures>
 </projectDescription>
